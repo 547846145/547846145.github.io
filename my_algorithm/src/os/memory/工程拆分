@@ -1,0 +1,11 @@
+选择工程new
+添加module 创建client包
+
+
+
+启动类找不到的问题
+https://www.cnblogs.com/thinking-better/p/7827368.html
+
+
+解决SpringBoot项目repackage failed: Unable to find main class Maven打包 install的问题
+https://blog.csdn.net/chl191623691/article/details/101422761
