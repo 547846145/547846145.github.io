@@ -1,4 +1,3 @@
 CentOS 软件管家 yum 查看软件列表 rpm
 linux主执行文件会放在/usr/bin或者/usr/sbin下面，其他库文件会放在/var下面，配置文件会放在/etc下面
-+
-1.
+
