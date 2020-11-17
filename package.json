@@ -1,0 +1,10 @@
+{
+  "name": "handbook",
+  "version": "1.0.0",
+  "scripts": {
+    "buildSidebar": "node build/buildSidebar.js",
+    "serve": "docsify serve documents --port 9099"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

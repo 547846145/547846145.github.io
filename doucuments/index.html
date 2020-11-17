@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content="Description">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <style>
+    :root {
+      --sidebar-nav-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='11.2' viewBox='0 0 7 11.2'%3E%3Cpath d='M1.5 1.5l4 4.1 -4 4.1' stroke-width='1.5' stroke='rgb%28179, 179, 179%29' fill='none' stroke-linecap='square' stroke-linejoin='miter' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    }
+
+    /* 调整收齐展开侧边栏按钮的样式 start */
+    .sidebar-toggle {
+      top: 50px;
+      bottom: auto;
+      left: 300px;
+      right: auto;
+      width: auto;
+      transition: left .2s ease-in-out;
+    }
+
+    body.close .sidebar-toggle {
+      left: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar-toggle {
+        top: auto;
+        left: 0;
+        bottom: 20px;
+      }
+
+      /* 这里好像有个 BUG，移动端的时候 close 是展开 */
+      body.close .sidebar-toggle {
+        left: 310px;
+        width: auto;
+      }
+    }
+
+    /* 调整收齐展开侧边栏按钮的样式 end */
+
+    /* 给导航增加展开收起的图标 start */
+    .sidebar-nav li > a:not(.section-link) {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .sidebar-nav li > ul {
+      display: none;
+    }
+
+    .sidebar-nav li.active.open > ul,
+    .sidebar-nav li.active:not(.collapse) > ul {
+      display: block;
+    }
+
+    .app-sub-sidebar {
+      margin-left: 20px !important;
+    }
+
+    .app-sub-sidebar a {
+      padding-left: 3px;
+    }
+
+    .sidebar-nav li > a:not(.section-link):not(:only-child)::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background: transparent var(--sidebar-nav-arrow-image) no-repeat center center;
+      transform: translateY(-50%);
+    }
+
+    .sidebar-nav li.open > a:not(.section-link):not(:only-child)::before {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    /* 给导航增加展开收起的图标 end */
+
+    /* 调整自动生成的页内导航信息的样式 start */
+    .sidebar ul li.active > a {
+      border-right-width: 4px;
+    }
+
+    .sidebar-nav .app-sub-sidebar li a {
+      color: #999;
+    }
+
+    /* 调整自动生成的页内导航信息的样式 end */
+  </style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+  window.$docsify = {
+    name: 'Will_lee',
+    // repo: 'http://gitlab.shipout.tech/handbook/Handbook', // 右上角跳转到 handbook 仓库的连接
+    loadSidebar: true, // 加载 _sidebar.md
+    subMaxLevel: 2, // 自动显示文章内部标题的层级
+    coverpage: true, // 首页的封面
+    search: 'auto',
+    auto2top: true,
+    plugins: [
+      function (hook, vm) {
+        hook.doneEach(function () {
+          movePageContentNav()
+        })
+      }
+    ],
+    plantuml: {
+      skin: 'classic',
+    },
+  }
+
+  // 将自动生成的页面内部导航挪到页面导航前面
+  function movePageContentNav () {
+    let elSubMenu = document.querySelector('ul + .app-sub-sidebar')
+    if (elSubMenu) {
+      elSubMenu.parentElement.querySelector('a').after(elSubMenu)
+    }
+  }
+</script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+<!-- 查看图片插件 -->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<!-- 扩展语法高亮 -->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-groovy.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-kotlin.min.js"></script>
+<!-- plantuml 流程图插件 -->
+<script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
+</body>
+</html>
