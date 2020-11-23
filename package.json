@@ -1,10 +1,22 @@
 {
-  "name": "handbook",
+  "name": "myprogramming",
   "version": "1.0.0",
   "scripts": {
     "buildSidebar": "node build/buildSidebar.js",
     "serve": "docsify serve documents --port 9099"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "description": "547846145.github.io",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/547846145/my_algorithm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/547846145/my_algorithm/issues"
+  },
+  "homepage": "https://github.com/547846145/my_algorithm#readme"
 }
