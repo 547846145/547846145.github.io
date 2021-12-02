@@ -1,0 +1,9 @@
+1.性能从俩个指标来说明 （性能 = 1/响应时间）
+>1.响应时间 搬得快
+>2.吞吐率（带宽）搬得更多
+SPEC(Standard Performance Evaluation Corporation) 制定跑分规则的机构
+CPI(Cycles Per Instruction)每条指令的平均时钟周期数
+CCP(Clock Cycle Time)时钟周期时间 1s/主频
+程序的CPU执行时间 = CPU时钟周期数 * 时钟周期时间 = 指令数 * CPI * CCT(Clock Cycle Time)
+
+
